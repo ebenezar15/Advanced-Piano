@@ -1,0 +1,6 @@
+# Personal course media stays on your computer, never in git.
+media/*
+!media/README.md
+!media/manifest.example.json
+node_modules/
+.DS_Store

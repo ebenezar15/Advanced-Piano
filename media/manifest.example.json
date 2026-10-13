@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "path": "Gospel/Gospel Runs and Fills.mp4", "title": "Gospel runs & fills", "lessons": ["g-runs"] },
+    { "path": "Voicings/Rootless Voicings.mp4", "lessons": ["v-rootless", "j-comping"] },
+    { "path": "Sheets/2-5-1 Chart.pdf", "lessons": ["h-251", "g-251"] }
+  ]
+}

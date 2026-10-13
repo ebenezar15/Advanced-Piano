@@ -1,0 +1,11 @@
+{
+  "name": "keystone-piano",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Keystone: interactive piano theory, jazz, black gospel and classical piano lab with 88-key roll, MIDI and real piano sounds.",
+  "scripts": {
+    "start": "npx --yes http-server -p 8080 -c-1 -o"
+  },
+  "license": "MIT"
+}

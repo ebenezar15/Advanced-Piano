@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="midnight">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Keystone · Piano Harmony Lab</title>
+  <meta name="description" content="Learn and practise piano theory, jazz, black gospel and classical piano with an 88-key roll, MIDI input and real piano sounds.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f4b860'/%3E%3Crect x='6' y='7' width='4' height='18' rx='1' fill='%23111'/%3E%3Crect x='14' y='7' width='4' height='12' rx='1' fill='%23111'/%3E%3Crect x='22' y='7' width='4' height='18' rx='1' fill='%23111'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Avenir Next is used when installed (macOS / iOS). Nunito Sans is the closest free fallback elsewhere. -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="Open navigation">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a class="brand" href="#/">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">Keystone<small>Piano Harmony Lab</small></span>
+      </a>
+      <div class="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search" type="search" placeholder="Search lessons, chords, genres…" autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <div class="top-status">
+        <button class="chip" id="midiChip" title="MIDI & audio setup"><span class="dot"></span><span class="lbl">MIDI</span></button>
+        <span class="chip ghost" id="audioChip" title="Piano samples"><span class="bar"><i></i></span><span class="lbl">Piano</span></span>
+        <button class="icon-btn" id="themeBtn" aria-label="Colour scheme" title="Colour scheme">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.9 1.2-1.8-.5-1.2.3-2.2 1.6-2.2H17a4 4 0 0 0 4-4c0-5.5-4-10-9-10Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.5" cy="11" r="1.4" fill="currentColor"/><circle cx="10.5" cy="7" r="1.4" fill="currentColor"/><circle cx="15" cy="7.5" r="1.4" fill="currentColor"/></svg>
+        </button>
+        <button class="icon-btn" id="settingsBtn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar" aria-label="Navigation"></aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="main" id="main" tabindex="-1"></main>
+
+    <section class="dock" id="dock" aria-label="Piano">
+      <div class="dock-bar" id="dockBar"></div>
+      <div class="roll-wrap" id="rollWrap"><canvas id="roll"></canvas><div class="roll-hint" id="rollHint">Play your MIDI keyboard, click the keys, or use <kbd>A</kbd>–<kbd>;</kbd> · <kbd>Space</kbd> = sustain</div></div>
+      <div class="kb-scroll"><div id="keyboard"></div></div>
+    </section>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
