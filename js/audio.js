@@ -70,8 +70,11 @@ export class PianoEngine {
     for (const layer of order) {
       await Promise.all(SAMPLE_NOTES.map(async name => {
         try {
-          const res = await fetch(`samples/piano/${layer}/${name}.mp3`);
-          const arr = await res.arrayBuffer();
+          // The standalone build embeds samples as base64; the normal build fetches them.
+          const embedded = window.__PIANO_SAMPLES?.[layer]?.[name];
+          const arr = embedded
+            ? Uint8Array.from(atob(embedded), c => c.charCodeAt(0)).buffer
+            : await (await fetch(`samples/piano/${layer}/${name}.mp3`)).arrayBuffer();
           const buf = await this.ctx.decodeAudioData(arr);
           this.buffers[layer].set(sampleMidi(name), buf);
         } catch (e) { /* missing sample: fall back to neighbours */ }

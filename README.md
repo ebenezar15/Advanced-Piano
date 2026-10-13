@@ -17,6 +17,9 @@ python3 -m http.server 8080   # then open http://localhost:8080
 
 Opening `index.html` directly from disk will not work, because the browser blocks module scripts and samples on `file://`.
 
+**Single-file version:** `npm install && npm run build` creates `dist/Keystone.html` (≈22 MB), with code, styles and
+piano samples all inside one file. Double-click it to open in Chrome or Edge, with no server needed.
+
 ## What's inside
 
 **Learning path: 9 stages, 48 lessons, in order**

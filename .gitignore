@@ -4,3 +4,4 @@ media/*
 !media/manifest.example.json
 node_modules/
 .DS_Store
+dist/

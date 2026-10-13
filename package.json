@@ -5,7 +5,11 @@
   "type": "module",
   "description": "Keystone: interactive piano theory, jazz, black gospel and classical piano lab with 88-key roll, MIDI and real piano sounds.",
   "scripts": {
-    "start": "npx --yes http-server -p 8080 -c-1 -o"
+    "start": "npx --yes http-server -p 8080 -c-1 -o",
+    "build": "node scripts/build-standalone.mjs"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
 }
